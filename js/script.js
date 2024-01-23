@@ -17,7 +17,7 @@ const app = createApp({
     computed: {
         filteredTasks() {
             const searchString = this.searchText.toLowerCase();
-            return this.tasks.filter(({ text }) => text.toLowerCase().includes(searchString))
+            return this.tasks.filter(({ text }) => text.toLowerCase().includes(searchString));
         }
     },
     methods: {
