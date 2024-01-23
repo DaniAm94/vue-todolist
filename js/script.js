@@ -9,13 +9,24 @@ const app = createApp({
                 { id: 2, done: true, text: 'Lavare i capelli' },
                 { id: 3, done: false, text: 'Comprare una marca da bollo' },
                 { id: 4, done: false, text: 'Aggiornare il PC' }
-            ]
+            ],
+            newTaskText: ''
         }
     },
     methods: {
-        deleteTask(i) {
-            // Riaggiorna la task list eliminando l'elemento con indice passato a parametro
-            this.tasks = this.tasks.filter((task, taskIndex) => i !== taskIndex);
+        deleteTask(id) {
+            // Riaggiorna la task list escludendo l'elemento con id passato a parametro
+            this.tasks = this.tasks.filter((task) => id !== task.id);
+            console.log(this.tasks);
+        },
+        addTask() {
+            const newTask = {
+                id: new Date().toISOString(),
+                done: false,
+                text: this.newTaskText
+            };
+            this.tasks.push(newTask);
+            this.newTaskText = '';
         }
     }
 })

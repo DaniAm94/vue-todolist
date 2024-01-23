@@ -29,3 +29,7 @@ Ecco l'array di oggetti da utilizzare:
 1. Stampare dinamicamente in pagina la lista di task mediante vue
 2. Aggiungere la classe che rende il testo barrato se l'attributo done è true
 3. Implementare una reazione al click sul pulsante x che deve eliminare l'item corrispondente dalla lista
+4. Aggiungere un li fisso come ultimo elemento della lista
+5. Inserire all'interno dell'ultimo li un campo input text e un pulsante per aggiungere una nuova task alla lista
+    1. Collegare il campo input a un nuovo data che sarà il testo delle nuova task
+    2. creare una funzione che crea un elemento di tipo objet che avrà un id univoco, un attributo done, inizializzato a false di default e come attributo text il contenuto del nuovo data precedentemente creato. Questo nuovo object sarà infine pushato nell'array delle tasks e automaticamente renderizzato in pagina grazie al v-for
