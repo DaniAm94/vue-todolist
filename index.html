@@ -43,6 +43,11 @@
                         class="fas fa-plus"></i></button>
             </li>
         </ul>
+        <div v-show="tasks.length" class="btn-group mt-3 " role="group">
+            <button @click="setAllAs(true)" type="button" class="btn btn-outline-primary">All Done</button>
+            <button @click="setAllAs(false)" type="button" class="btn btn-outline-primary">All Undone</button>
+            <button @click="deleteAll" type="button" class="btn btn-outline-primary">Delete All</button>
+        </div>
         <h2 v-show="!tasks.length">Non ci sono task</h2>
     </div>
 
