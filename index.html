@@ -28,18 +28,22 @@
 
         <ul class="list-group">
             <li v-for="task in tasks" class="list-group-item d-flex justify-content-between ">
-                <span :class="{'text-decoration-line-through': task.done}">
-                    {{task.text}}
-                </span>
+                <div>
+                    <input class="form-check-input me-3 " type="checkbox" v-model="task.done">
+                    <span @click="toggleClass(task.id)" :class="{'text-decoration-line-through': task.done}">
+                        {{task.text}}
+                    </span>
+                </div>
                 <button @click="deleteTask(task.id)" type="button" class="btn-close" aria-label="Close"></button>
             </li>
             <li class="list-group-item d-flex justify-content-between ">
                 <input @keyup.enter="addTask" type="text" class="form-control" placeholder="Aggiungi task"
-                    v-model="newTaskText">
+                    v-model.trim="newTaskText">
                 <button @click="addTask" class="btn btn-outline-secondary" type="button"><i
                         class="fas fa-plus"></i></button>
             </li>
         </ul>
+        <h2 v-show="!tasks.length">Non ci sono task</h2>
     </div>
 
 

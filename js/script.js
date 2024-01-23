@@ -20,6 +20,7 @@ const app = createApp({
             console.log(this.tasks);
         },
         addTask() {
+            if (!this.newTaskText) return;
             const newTask = {
                 id: new Date().toISOString(),
                 done: false,
@@ -27,6 +28,13 @@ const app = createApp({
             };
             this.tasks.push(newTask);
             this.newTaskText = '';
+        },
+        toggleClass(id) {
+            this.tasks.forEach(task => {
+                if (task.id === id) {
+                    task.done = !task.done;
+                }
+            });
         }
     }
 })
