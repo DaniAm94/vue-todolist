@@ -23,3 +23,8 @@ Ecco l'array di oggetti da utilizzare:
 ### `SUPER BONUS`
 1. Creare dei bottoni con le azioni massive (tutti fatti, tutti da fare, elimina tutti)
 2. Creare un filtro di ricerca in tempo reale
+
+
+### SCALETTA:
+1. Stampare dinamicamente in pagina la lista di task mediante vue
+2. Aggiungere la classe che rende il testo barrato se l'attributo done è true
