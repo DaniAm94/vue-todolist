@@ -27,11 +27,11 @@
     <div class="container" id="root">
 
         <ul class="list-group">
-            <li v-for="task in tasks" class="list-group-item d-flex justify-content-between ">
+            <li v-for="(task,i) in tasks" class="list-group-item d-flex justify-content-between ">
                 <span :class="{'text-decoration-line-through': task.done}">
                     {{task.text}}
                 </span>
-                <button type="button" class="btn-close" aria-label="Close"></button>
+                <button @click="deleteTask(i)" type="button" class="btn-close" aria-label="Close"></button>
             </li>
         </ul>
     </div>

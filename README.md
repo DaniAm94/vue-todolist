@@ -28,3 +28,4 @@ Ecco l'array di oggetti da utilizzare:
 ### SCALETTA:
 1. Stampare dinamicamente in pagina la lista di task mediante vue
 2. Aggiungere la classe che rende il testo barrato se l'attributo done è true
+3. Implementare una reazione al click sul pulsante x che deve eliminare l'item corrispondente dalla lista

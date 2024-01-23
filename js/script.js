@@ -11,6 +11,12 @@ const app = createApp({
                 { id: 4, done: false, text: 'Aggiornare il PC' }
             ]
         }
+    },
+    methods: {
+        deleteTask(i) {
+            // Riaggiorna la task list eliminando l'elemento con indice passato a parametro
+            this.tasks = this.tasks.filter((task, taskIndex) => i !== taskIndex);
+        }
     }
 })
 
