@@ -33,3 +33,13 @@ Ecco l'array di oggetti da utilizzare:
 5. Inserire all'interno dell'ultimo li un campo input text e un pulsante per aggiungere una nuova task alla lista
     1. Collegare il campo input a un nuovo data che sarà il testo delle nuova task
     2. creare una funzione che crea un elemento di tipo objet che avrà un id univoco, un attributo done, inizializzato a false di default e come attributo text il contenuto del nuovo data precedentemente creato. Questo nuovo object sarà infine pushato nell'array delle tasks e automaticamente renderizzato in pagina grazie al v-for
+6. Aggiungere un button group di tre bottoni:
+    1. creare una funzione che passato a parametro un booleano mi setti tutti gli attributi done della lista con le stesso valore del booleano passato a parametro
+    2. richiamare la funzione creata al punto 6.1 nel primo button con argomento true per barrare (come fatte) tutte le task della lista, richiamare poi la stessa funzione nel secondo button con argomento false per settare il valore done di tutte le task della lista a false(non fatte)
+    3. creare una funzione che reinizializzi la lista ad array vuoto, richiamarla poi nel terzo button per cancellare tutti gli elementi dalla lista
+    4. nascondere il button group se la lista è vuota
+7. Inserisco un input di tipo text sopra la to do list che sarà la mia barra di ricerca
+8. Collego in tempo reale il value dell'input di ricerca ad una variabile searchedText con la direttiva v-model
+9. Creo una computed che mi crea un nuovo array di tasks filtrate 
+    - il nuovo array conterrà solo le task il cui testo contiene la stringa contenuta nella variabile searchedText
+10. In pagina renderizzo il nuovo array filtrato anzichè l'array di partenza

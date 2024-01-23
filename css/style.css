@@ -2,3 +2,11 @@ span,
 input[type=checkbox] {
     cursor: pointer;
 }
+
+#search-bar {
+    background-image: url("/img/search-interface-symbol.png");
+    background-size: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: left calc(.375em + .1875rem) center;
+    padding-left: 50px;
+}

@@ -10,7 +10,13 @@ const app = createApp({
                 { id: 3, done: false, text: 'Comprare una marca da bollo' },
                 { id: 4, done: false, text: 'Aggiornare il PC' }
             ],
-            newTaskText: ''
+            newTaskText: '',
+            searchedText: ''
+        }
+    },
+    computed: {
+        filteredTasks() {
+            return this.tasks.filter(({ text }) => text.includes(this.searchedText))
         }
     },
     methods: {
