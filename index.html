@@ -27,9 +27,8 @@
     <div class="container" id="root">
 
         <ul class="list-group">
-            <li class="list-group-item">
-
-                <input v-model="searchedText" type="text" placeholder="Cerca..." class=" form-control " id="search-bar">
+            <li v-if="tasks.length" class="list-group-item">
+                <input v-model="searchText" type="text" placeholder="Cerca..." class=" form-control " id="search-bar">
             </li>
             <li v-for="task in filteredTasks" class="list-group-item d-flex justify-content-between ">
                 <div>
@@ -55,7 +54,9 @@
             <button @click="setAllAs(false)" type="button" class="btn btn-outline-primary">All Undone</button>
             <button @click="deleteAll" type="button" class="btn btn-outline-primary">Delete All</button>
         </div>
-        <h2 v-show="!tasks.length">Non ci sono task</h2>
+        <h2 class="mt-3 " v-show="!filteredTasks.length">Non ci sono task <span v-show="searchText.length">contenenti
+                '{{searchText}}'</span>
+        </h2>
     </div>
 
 

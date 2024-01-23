@@ -11,12 +11,13 @@ const app = createApp({
                 { id: 4, done: false, text: 'Aggiornare il PC' }
             ],
             newTaskText: '',
-            searchedText: ''
+            searchText: ''
         }
     },
     computed: {
         filteredTasks() {
-            return this.tasks.filter(({ text }) => text.includes(this.searchedText))
+            const searchString = this.searchText.toLowerCase();
+            return this.tasks.filter(({ text }) => text.toLowerCase().includes(searchString))
         }
     },
     methods: {
@@ -43,7 +44,7 @@ const app = createApp({
             });
         },
         setAllAs(done) {
-            this.tasks.forEach(task => {
+            this.filteredTasks.forEach(task => {
                 task.done = done;
             })
         },
